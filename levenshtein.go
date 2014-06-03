@@ -1,4 +1,4 @@
-package levenshtein
+package textdistance
 
 func Min(is ...int) int {
 	min := 100
