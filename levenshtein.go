@@ -21,8 +21,17 @@ func Max(is ...int) int {
 }
 
 func LevenshteinDitance(s1, s2 string) int {
+	if s1 == s2 {
+		return 0
+	}
 	lenS1 := len(s1)
 	lenS2 := len(s2)
+	if lenS1 == 0 {
+		return lenS2
+	}
+	if lenS2 == 0 {
+		return lenS1
+	}
 	m := make([][]int, lenS1+1)
 	dis := 0
 	for i := range m {

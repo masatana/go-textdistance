@@ -2,7 +2,7 @@
 
 Calculate various text distancewith golang.
 
-## Implemented (Low efficiency though...)
+## Implemented
 * [Levenshtein distance](http://en.wikipedia.org/wiki/Levenshtein_distance)
 
 ## Not yet Implemented
