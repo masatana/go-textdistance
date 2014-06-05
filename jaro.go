@@ -5,7 +5,7 @@ import "math"
 // JaroDistance calculates jaro distance between s1 and s2.
 // This implementations is influenced by an implementation of [lucene](http://lucene.apache.org/)
 // Note that this calculation's result is normalized ( the result will be bewtwen 0 and 1)
-// and if t1 and t2 are exactly the same, the result is 0.
+// and if t1 and t2 are exactly the same, the result is 1.0.
 func JaroDistance(s1, s2 string) float64 {
 	if s1 == s2 {
 		return 1.0
