@@ -2,7 +2,9 @@ package textdistance
 
 import "strings"
 
-func LevenshteinDitance(s1, s2 string) int {
+// LevenshteinDistance calculates levenshtein distance between s1 and s2.
+// Reference: [Levenshtein Distance](http://en.wikipedia.org/wiki/Levenshtein_distance)
+func LevenshteinDistance(s1, s2 string) int {
 	if s1 == s2 {
 		return 0
 	}

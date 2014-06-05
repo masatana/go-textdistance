@@ -2,6 +2,8 @@ package textdistance
 
 import "math"
 
+// JaroDistance calculates jaro distance between s1 and s2.
+// This implementations is influenced by an implementation of [lucene](http://lucene.apache.org/)
 func JaroDistance(s1, s2 string) float64 {
 	if s1 == s2 {
 		return 1.0

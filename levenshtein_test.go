@@ -48,7 +48,7 @@ var LevenshteinDistanceTests = []LevenshteinDistanceTest{
 
 func TestLevenshteinDistance(t *testing.T) {
 	for _, lt := range LevenshteinDistanceTests {
-		actual := LevenshteinDitance(lt.s1, lt.s2)
+		actual := LevenshteinDistance(lt.s1, lt.s2)
 		if lt.expected != actual {
 			t.Errorf("Levenshtein distance of %s and %s: want %d got %d", lt.s1, lt.s2, lt.expected, actual)
 		}
