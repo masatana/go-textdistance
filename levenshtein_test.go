@@ -14,6 +14,21 @@ var LevenshteinTests = []LevenshteinTest{
 		"sitting",
 		3,
 	},
+	{
+		"book",
+		"back",
+		2,
+	},
+	{
+		"test",
+		"",
+		4,
+	},
+	{
+		"",
+		"test",
+		4,
+	},
 }
 
 func TestContains(t *testing.T) {
