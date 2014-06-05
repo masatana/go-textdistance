@@ -39,6 +39,11 @@ var LevenshteinDistanceTests = []LevenshteinDistanceTest{
 		"大丈夫",
 		3,
 	},
+	{
+		"あaaあ",
+		"あeoあ",
+		2,
+	},
 }
 
 func TestLevenshteinDistance(t *testing.T) {
