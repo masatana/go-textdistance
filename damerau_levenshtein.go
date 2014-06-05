@@ -15,9 +15,9 @@ func DamerauLevenshteinDistance(s1, s2 string) int {
 			} else {
 				cost = 0
 				if s1[i-1] != s2[j-1] {
-					m[i][j] = Min(m[i-1][j]+1, m[i][j-1]+1, m[i-1][j-1]+dis)
+					m[i][j] = Min(m[i-1][j]+1, m[i][j-1]+1, m[i-1][j-1]+cost)
 				}
-				if i > 1 && j > 1 && s1[i-1] == s2[j-2] && s1[i-2] == s[j-1] {
+				if i > 1 && j > 1 && s1[i-1] == s2[j-2] && s1[i-2] == s1[j-1] {
 					m[i][j] = Min(m[i][j], m[i-3][j-3]+cost)
 				}
 			}
