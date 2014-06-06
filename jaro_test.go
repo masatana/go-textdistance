@@ -40,7 +40,7 @@ var JaroDistanceTests = []jaroDistanceTest{
 
 func TestJaroDistance(t *testing.T) {
 	for _, jt := range JaroDistanceTests {
-		actual := JaroDistance(jt.s1, jt.s2)
+		actual, _ := JaroDistance(jt.s1, jt.s2)
 		if !jt.equals(actual) {
 			t.Errorf("Jaro distance of %s and %s: want %f got %f", jt.s1, jt.s2, jt.expected, actual)
 		}
