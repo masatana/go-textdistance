@@ -36,4 +36,4 @@ func main() {
 
 ## License
 
-This software is released under the MIT License, see [LICENSE.txt](https://github.com/masatana/go-textdistance/LICENSE.txt)
+This software is released under the MIT License, see LICENSE.txt.
