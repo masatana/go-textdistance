@@ -2,6 +2,10 @@ package textdistance
 
 import "strings"
 
+// DamerauLevenshteinDistance calculates the damerau-levenshtein distance between s1 and s2.
+// Reference: [Damerau-Levenshtein Distance](http://en.wikipedia.org/wiki/Damerau%E2%80%93Levenshtein_distance)
+// Note that this calculation's result isn't normalized. (not between 0 and 1.)
+// and if s1 and s2 are exactly the same, the result is 0.
 func DamerauLevenshteinDistance(s1, s2 string) int {
 	if s1 == s2 {
 		return 0

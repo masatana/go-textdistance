@@ -2,11 +2,14 @@ package textdistance
 
 import "strings"
 
-// LevenshteinDistance calculates levenshtein distance between s1 and s2.
+// LevenshteinDistance calculates the levenshtein distance between s1 and s2.
 // Reference: [Levenshtein Distance](http://en.wikipedia.org/wiki/Levenshtein_distance)
 // Note that this calculation's result isn't normalized. (not between 0 and 1.)
 // and if s1 and s2 are exactly the same, the result is 0.
 func LevenshteinDistance(s1, s2 string) int {
+	if s1 == s2 {
+		return 0
+	}
 	s1Array := strings.Split(s1, "")
 	s2Array := strings.Split(s2, "")
 	lenS1Array := len(s1Array)
