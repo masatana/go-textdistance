@@ -68,5 +68,7 @@ func JaroDistance(s1, s2 string) float64 {
 	}
 	newt := float64(t) / 2.0
 	newm := float64(m)
-	return 1 / 3.0 * (newm/float64(len(s1)) + newm/float64(len(s2)) + (newm-newt)/newm)
+	return 1 / 3.0 * (newm/float64(len(s1)) + newm/float64(len(s2)) + (newm-newt)/newm),
+		newm,
+		newt
 }
