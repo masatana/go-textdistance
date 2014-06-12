@@ -1,14 +1,18 @@
 package textdistance
 
-import "math"
+import (
+	"math"
+	"strings"
+)
 
 // JaroDistance calculates jaro distance between s1 and s2.
 // This implementations is influenced by an implementation of [lucene](http://lucene.apache.org/)
 // Note that this calculation's result is normalized ( the result will be bewtwen 0 and 1)
 // and if t1 and t2 are exactly the same, the result is 1.0.
-func JaroDistance(s1, s2 string) float64 {
+// This function returns distance and prefix (for jaro-winkler distance)
+func JaroDistance(s1, s2 string) (float64, int) {
 	if s1 == s2 {
-		return 1.0
+		return 1.0, 0.0
 	}
 	var longer string
 	var shorter string
@@ -63,12 +67,20 @@ func JaroDistance(s1, s2 string) float64 {
 			t++
 		}
 	}
+	prefix := 0
+	longerArray := strings.Split(longer, "")
+	shorterArray := strings.Split(shorter, "")
+	for i := 0; i < len(shorter); i++ {
+		if longerArray[i] == shorterArray[i] {
+			prefix++
+		} else {
+			break
+		}
+	}
 	if m == 0 {
-		return 0.0
+		return 0.0, 0.0
 	}
 	newt := float64(t) / 2.0
 	newm := float64(m)
-	return 1 / 3.0 * (newm/float64(len(s1)) + newm/float64(len(s2)) + (newm-newt)/newm),
-		newm,
-		newt
+	return 1 / 3.0 * (newm/float64(len(s1)) + newm/float64(len(s2)) + (newm-newt)/newm), prefix
 }
