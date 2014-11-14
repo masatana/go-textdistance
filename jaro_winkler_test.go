@@ -7,7 +7,7 @@ type jaroWinkerDistanceTest struct {
 }
 
 func (jdt *jaroWinkerDistanceTest) equals(dis float64) bool {
-	if jdt.expected-1e-3 < dis && jdt.expected < jdt.expected+1e-3 {
+	if jdt.expected-1e-3 < dis && dis < jdt.expected+1e-3 {
 		return true
 	}
 	return false
