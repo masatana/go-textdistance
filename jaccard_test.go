@@ -29,7 +29,7 @@ func TestJaccardSimilarity(t *testing.T) {
 	for _, js := range JaccardSimilarityTests {
 		actual := JaccardSimilarity(js.s1, js.s2, nil)
 		if !js.equals(actual) {
-			t.Errorf("Jaccard similarity of %s adn %s: want %f got %f", js.s1, js.s2, js.expected, actual)
+			t.Errorf("Jaccard similarity of %s and %s: want %f got %f", js.s1, js.s2, js.expected, actual)
 		}
 	}
 }
