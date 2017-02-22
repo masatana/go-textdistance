@@ -37,7 +37,8 @@ func main() {
 ## How to test
 
 ```bash
-$ PASS
+$ go test
+PASS
 ok      github.com/masatana/go-textdistance     0.002s
 ```
 
