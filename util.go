@@ -1,8 +1,10 @@
 package textdistance
 
+import "math"
+
 // Min returns the minimum number of passed int slices.
 func Min(is ...int) int {
-	min := int(1e10)
+	min := int(math.MaxInt64)
 	for _, v := range is {
 		if min > v {
 			min = v
