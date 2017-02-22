@@ -1,6 +1,6 @@
 # go-textdistance
 
-Calculate various text distancewith golang.
+Calculate various text distance with golang.
 
 ## Implemented
 * [Levenshtein distance](http://en.wikipedia.org/wiki/Levenshtein_distance)
@@ -12,7 +12,7 @@ Calculate various text distancewith golang.
 
 
 ```bash
-go install github.com/masatana/go-textdistance
+$ go install github.com/masatana/go-textdistance
 ```
 
 ```go
@@ -32,6 +32,13 @@ func main() {
 	fmt.Println(textdistance.JaroDistance(s1, s2))
 	fmt.Println(textdistance.JaroWinklerDistance(s1, s2))
 }
+```
+
+## How to test
+
+```bash
+$ PASS
+ok      github.com/masatana/go-textdistance     0.002s
 ```
 
 ## License
