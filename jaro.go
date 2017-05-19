@@ -2,7 +2,6 @@ package textdistance
 
 import (
 	"math"
-	"strings"
 )
 
 // JaroDistance calculates jaro distance between s1 and s2.
@@ -68,10 +67,8 @@ func JaroDistance(s1, s2 string) (float64, int) {
 		}
 	}
 	prefix := 0
-	longerArray := strings.Split(longer, "")
-	shorterArray := strings.Split(shorter, "")
 	for i := 0; i < len(shorter); i++ {
-		if longerArray[i] == shorterArray[i] {
+		if longer[i] == shorter[i] {
 			prefix++
 		} else {
 			break
