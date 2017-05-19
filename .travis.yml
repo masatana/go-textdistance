@@ -1,0 +1,10 @@
+language: go
+go: 
+  - 1.x
+  - master
+
+install:
+  - go get github.com/deckarep/golang-set
+
+script:
+  - go test -v
