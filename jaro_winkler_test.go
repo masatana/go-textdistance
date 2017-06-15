@@ -1,5 +1,9 @@
 package textdistance
 
+import (
+	"testing"
+)
+
 type jaroWinkerDistanceTest struct {
 	s1       string
 	s2       string
@@ -34,4 +38,13 @@ var JaroWinklerDistanceTests = []jaroWinkerDistanceTest{
 		"あいうおえか",
 		0.961,
 	},
+}
+
+func TestJaroWinklerDistance(t *testing.T) {
+	for _, jwt := range JaroWinklerDistanceTests {
+		actual, _ := JaroWinklerDistance(jwt.s1, jwt.s2)
+		if !jwt.equals(actual) {
+			t.Errorf("Jaro-Winkler distance of %s and %s: want %f got %f", jwt.s1, jwt.s2, jwt.expected, actual)
+		}
+	}
 }
