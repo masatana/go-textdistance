@@ -35,3 +35,12 @@ var JaroWinklerDistanceTests = []jaroWinkerDistanceTest{
 		0.961,
 	},
 }
+
+func TestJaroWinklerDistance(t *testing.T) {
+	for _, jwt := range JaroWinklerDistanceTests {
+		actual, _ := JaroWinklerDistance(jt.s1, jt.s2)
+		if !jwt.equals(actual) {
+			t.Errorf("Jaro-Winkler distance of %s and %s: want %f got %f", jwt.s1, jwt.s2, jwt.expected, actual)
+		}
+	}
+}
