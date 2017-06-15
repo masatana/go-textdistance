@@ -2,6 +2,10 @@
 
 Calculate various text distance with golang.
 
+
+
+[![codecov](https://codecov.io/gh/masatana/go-textdistance/branch/master/graph/badge.svg)](https://codecov.io/gh/masatana/go-textdistance)
+
 ## Implemented
 * [Levenshtein distance](http://en.wikipedia.org/wiki/Levenshtein_distance)
 * [Damerau-Levenshtein distance](http://en.wikipedia.org/wiki/Damerau%E2%80%93Levenshtein_distance)
