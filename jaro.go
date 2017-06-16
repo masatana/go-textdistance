@@ -13,14 +13,14 @@ func JaroDistance(s1, s2 string) (float64, int) {
 	if s1 == s2 {
 		return 1.0, 0.0
 	}
-	var longer string
-	var shorter string
+	var longer []rune
+	var shorter []rune
 	if len(s1) > len(s2) {
-		longer = s1
-		shorter = s2
+		longer = []rune(s1)
+		shorter = []rune(s2)
 	} else {
-		longer = s2
-		shorter = s1
+		longer = []rune(s2)
+		shorter = []rune(s1)
 	}
 	scope := int(math.Floor(float64(len(longer)/2))) - 1
 	// m is the number of matching characters.
@@ -43,8 +43,8 @@ func JaroDistance(s1, s2 string) (float64, int) {
 			break
 		}
 	}
-	ms1 := make([]uint8, m)
-	ms2 := make([]uint8, m)
+	ms1 := make([]rune, m)
+	ms2 := make([]rune, m)
 	si := 0
 	for i := 0; i < len(shorter); i++ {
 		if matchIndexes[i] != -1 {
@@ -79,5 +79,5 @@ func JaroDistance(s1, s2 string) (float64, int) {
 	}
 	newt := float64(t) / 2.0
 	newm := float64(m)
-	return 1 / 3.0 * (newm/float64(len(s1)) + newm/float64(len(s2)) + (newm-newt)/newm), prefix
+	return 1 / 3.0 * (newm/float64(len(shorter)) + newm/float64(len(longer)) + (newm-newt)/newm), prefix
 }
