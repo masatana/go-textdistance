@@ -13,14 +13,10 @@ func JaroDistance(s1, s2 string) (float64, int) {
 	if s1 == s2 {
 		return 1.0, 0.0
 	}
-	var longer []rune
-	var shorter []rune
-	if len(s1) > len(s2) {
-		longer = []rune(s1)
-		shorter = []rune(s2)
-	} else {
-		longer = []rune(s2)
-		shorter = []rune(s1)
+	// compare length using rune slice length, as s1 and s2 are not necessarily ASCII-only strings
+	longer, shorter := []rune(s1), []rune(s2)
+	if len(longer) < len(shorter) {
+		longer, shorter = shorter, longer
 	}
 	scope := int(math.Floor(float64(len(longer)/2))) - 1
 	// m is the number of matching characters.
