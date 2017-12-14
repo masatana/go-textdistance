@@ -16,7 +16,7 @@ Calculate various text distance with golang.
 
 
 ```bash
-$ go install github.com/masatana/go-textdistance
+$ go get github.com/masatana/go-textdistance
 ```
 
 ```go
