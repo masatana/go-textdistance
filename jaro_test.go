@@ -31,6 +31,11 @@ var JaroDistanceTests = []jaroDistanceTest{
 		"DICKSONX",
 		0.767,
 	},
+	{
+		"HELLO WORLD",
+		"HELLO 我的世界",
+		0.715,
+	},
 }
 
 func TestJaroDistance(t *testing.T) {
